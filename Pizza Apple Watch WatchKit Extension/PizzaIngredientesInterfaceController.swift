@@ -69,10 +69,13 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
                     pizzaIngredientesSelected.append(actualIngrediente)
                 }
             }else{
-                let imageName = "empty"
-                cell?.cellCheckImage.setImageNamed(imageName)
-                let actualIndex = pizzaIngredientesSelected.indexOf(actualIngrediente)
-                pizzaIngredientesSelected.removeAtIndex(actualIndex!)
+                if pizzaIngredientesSelected.contains(actualIngrediente){
+                    let imageName = "empty"
+                    cell?.cellCheckImage.setImageNamed(imageName)
+                    print("To remove \(actualIngrediente)")
+                    let actualIndex = pizzaIngredientesSelected.indexOf(actualIngrediente)
+                    pizzaIngredientesSelected.removeAtIndex(actualIndex!)
+                }
             }
         }else{
             let imageName = "completed"
@@ -80,8 +83,6 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
             pizzaIngredientesSelected.append(actualIngrediente)
             doneButton.setEnabled(true)
         }
-
-        print("Actual \(pizzaIngredientesSelected)")
         
     }
 
