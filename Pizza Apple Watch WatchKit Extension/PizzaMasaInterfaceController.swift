@@ -1,6 +1,6 @@
 //
-//  InterfaceController.swift
-//  Pizza Apple Watch WatchKit Extension
+//  PizzaMasaInterfaceController.swift
+//  Pizza Apple Watch
 //
 //  Created by Dante Solorio on 1/23/16.
 //  Copyright © 2016 Dante Solorio. All rights reserved.
@@ -10,12 +10,12 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class PizzaMasaInterfaceController: WKInterfaceController {
     
-    @IBOutlet var sizeTable: WKInterfaceTable!
-    
-    let pizzaSizes = ["Chica", "Mediana", "Grande"]
+    @IBOutlet var masaTable: WKInterfaceTable!
 
+    let pizzaMasas = ["Delgada", "Crujiente", "Gruesa"]
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -31,19 +31,18 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
+
     func setupTable() {
-        sizeTable.setNumberOfRows(pizzaSizes.count, withRowType: "ItemsTable")
+        masaTable.setNumberOfRows(pizzaMasas.count, withRowType: "ItemsTable")
         
-        for var i = 0; i < pizzaSizes.count; ++i {
-            if let row = sizeTable.rowControllerAtIndex(i) as? ItemsTable {
-                row.cellLabel.setText(pizzaSizes[i])
+        for var i = 0; i < pizzaMasas.count; ++i {
+            if let row = masaTable.rowControllerAtIndex(i) as? ItemsTable {
+                row.cellLabel.setText(pizzaMasas[i])
             }
         }
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        self.pushControllerWithName("PizzaMasaInterfaceController", context: pizzaSizes[rowIndex])
+        self.pushControllerWithName("PizzaQuesoInterfaceController", context: pizzaMasas[rowIndex])
     }
-
 }

@@ -1,15 +1,189 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Pizza_Apple_Watch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="c1r-TD-8CZ">
+                            <items>
+                                <label width="136" alignment="left" text="Tamaño:" textAlignment="center" id="GXX-Yc-de0">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <table alignment="left" id="vPc-3I-xhZ">
+                                    <items>
+                                        <tableRow identifier="ItemsTable" id="VuZ-VW-xWE" customClass="ItemsTable" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="1jB-Eu-cqC">
+                                                <items>
+                                                    <label width="136" alignment="left" text="Label" textAlignment="center" id="dGt-dg-KyN"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="cellLabel" destination="dGt-dg-KyN" id="EdQ-zF-6kJ"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="sizeTable" destination="vPc-3I-xhZ" id="boP-Zt-nqj"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="288" y="321"/>
+        </scene>
+        <!--PizzaMasaInterfaceController-->
+        <scene sceneID="jfu-IK-hTZ">
+            <objects>
+                <controller identifier="PizzaMasaInterfaceController" id="MdQ-hG-edn" customClass="PizzaMasaInterfaceController" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Gth-lT-9NM">
+                            <items>
+                                <label width="136" alignment="left" text="Masa:" textAlignment="center" id="5za-7o-DqH">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <table alignment="left" id="Hzy-pn-RbM">
+                                    <items>
+                                        <tableRow identifier="ItemsTable" id="2jj-vc-nOq" customClass="ItemsTable" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="wx6-Du-C21">
+                                                <items>
+                                                    <label width="136" alignment="left" text="Label" textAlignment="center" id="DfQ-nz-xOg"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="cellLabel" destination="DfQ-nz-xOg" id="Tp2-Y5-Elm"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="masaTable" destination="Hzy-pn-RbM" id="Y10-rC-fwH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="458" y="321"/>
+        </scene>
+        <!--PizzaQuesoInterfaceController-->
+        <scene sceneID="gtp-gt-0tm">
+            <objects>
+                <controller identifier="PizzaQuesoInterfaceController" id="XjO-gD-RdJ" customClass="PizzaQuesoInterfaceController" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="CdG-Ah-dcN">
+                            <items>
+                                <label width="136" alignment="left" text="Queso:" textAlignment="center" id="nZU-6A-w6D">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <table alignment="left" id="m9a-iy-xWH">
+                                    <items>
+                                        <tableRow identifier="ItemsTable" id="A6c-5r-gHC" customClass="ItemsTable" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="XuZ-oR-ms5">
+                                                <items>
+                                                    <label width="136" alignment="left" text="Label" textAlignment="center" id="qmY-f7-8zb"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="cellLabel" destination="qmY-f7-8zb" id="18Y-Xz-AKj"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="quesoTable" destination="m9a-iy-xWH" id="vWM-I3-elc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="632" y="321"/>
+        </scene>
+        <!--PizzaIngredientesInterfaceController-->
+        <scene sceneID="nO6-4I-4L1">
+            <objects>
+                <controller identifier="PizzaIngredientesInterfaceController" id="bdY-Y8-sph" customClass="PizzaIngredientesInterfaceController" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="uvZ-CY-m7H">
+                            <items>
+                                <label width="136" alignment="left" text="Ingredientes:" textAlignment="center" id="6Qc-hx-pur">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <table alignment="left" id="tqN-bG-Sae">
+                                    <items>
+                                        <tableRow identifier="IngredientesTable" id="ZZH-qn-Z3Y" customClass="IngredientesTable" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="aOC-FR-Jfo">
+                                                <items>
+                                                    <label width="76" height="37.5" alignment="left" text="Label" textAlignment="center" id="V1n-2t-muV"/>
+                                                    <imageView width="40" height="38" alignment="left" image="check-empty" id="2bd-9y-aKf"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="cellCheckImage" destination="2bd-9y-aKf" id="Iwa-mz-nq9"/>
+                                                <outlet property="cellLabel" destination="V1n-2t-muV" id="pxU-Xs-U5i"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Listo" id="5jt-Nn-DaX">
+                            <color key="titleColor" red="0.95686274510000002" green="0.84313725490000002" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goToConfirmation" destination="bdY-Y8-sph" id="wUS-qU-sOX"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="ingredientesTable" destination="tqN-bG-Sae" id="6Nd-Tz-cyP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="800" y="321"/>
+        </scene>
+        <!--ConfirmationInterfaceController-->
+        <scene sceneID="Lk1-SM-dgp">
+            <objects>
+                <controller identifier="ConfirmationInterfaceController" id="HUU-gl-vDK" customClass="ConfirmationInterfaceController" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="338-uV-pR6">
+                            <items>
+                                <label width="134.5" alignment="left" text="Confirmación:" textAlignment="center" id="FDo-Hw-hbx">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <table alignment="left" id="Bem-uL-VkE">
+                                    <items>
+                                        <tableRow identifier="ItemsTable" id="AyY-2r-b32" customClass="ItemsTable" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="BPa-ay-d3d">
+                                                <items>
+                                                    <label width="126" height="39.5" alignment="left" text="Label" textAlignment="center" id="t24-81-syy">
+                                                        <color key="textColor" red="0.51021969320000005" green="0.73494595289999998" blue="0.38530868289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="cellLabel" destination="t24-81-syy" id="xYC-b8-nem"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Confirma tu pedido." id="JcW-Hp-mNw">
+                            <color key="titleColor" red="1" green="0.023958288219999999" blue="0.21390108390000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="973" y="321"/>
         </scene>
     </scenes>
 </document>
