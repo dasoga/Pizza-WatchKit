@@ -23,7 +23,7 @@ class ConfirmationInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         pizzaObj = context as! Pizza
-        print("llego \(pizzaObj.ingredientes)")
+
         updateInfo()
         // Configure interface objects here.
     }
@@ -51,5 +51,9 @@ class ConfirmationInterfaceController: WKInterfaceController {
             }
         }
         
+    }
+    
+    @IBAction func goToMyPizza(){
+        self.pushControllerWithName("ReadyPizzaInterfaceController", context: nil)
     }
 }

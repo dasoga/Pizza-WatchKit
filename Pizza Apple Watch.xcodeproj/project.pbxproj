@@ -26,6 +26,7 @@
 		2C03419A1C54971800AAC189 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */; };
 		2C03419C1C55B13400AAC189 /* IngredientesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03419B1C55B13400AAC189 /* IngredientesTable.swift */; };
 		2CB2B9171C55F7A700866EA6 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B9161C55F7A700866EA6 /* Pizza.swift */; };
+		2CB2B9191C55FF6B00866EA6 /* ReadyPizzaInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B9181C55FF6B00866EA6 /* ReadyPizzaInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationInterfaceController.swift; sourceTree = "<group>"; };
 		2C03419B1C55B13400AAC189 /* IngredientesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientesTable.swift; sourceTree = "<group>"; };
 		2CB2B9161C55F7A700866EA6 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		2CB2B9181C55FF6B00866EA6 /* ReadyPizzaInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyPizzaInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */,
 				2C03419B1C55B13400AAC189 /* IngredientesTable.swift */,
 				2CB2B9161C55F7A700866EA6 /* Pizza.swift */,
+				2CB2B9181C55FF6B00866EA6 /* ReadyPizzaInterfaceController.swift */,
 			);
 			path = "Pizza Apple Watch WatchKit Extension";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				2C0341961C54936000AAC189 /* PizzaQuesoInterfaceController.swift in Sources */,
 				2C0341941C5492DB00AAC189 /* PizzaMasaInterfaceController.swift in Sources */,
 				2C03417E1C5490CD00AAC189 /* InterfaceController.swift in Sources */,
+				2CB2B9191C55FF6B00866EA6 /* ReadyPizzaInterfaceController.swift in Sources */,
 				2C0341981C54960000AAC189 /* PizzaIngredientesInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

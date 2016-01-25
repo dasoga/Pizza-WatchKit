@@ -195,6 +195,9 @@
                         </group>
                         <button width="1" alignment="left" title="Confirma tu pedido." id="JcW-Hp-mNw">
                             <color key="titleColor" red="1" green="0.023958288219999999" blue="0.21390108390000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goToMyPizza" destination="HUU-gl-vDK" id="ZpO-DA-G9w"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
@@ -206,6 +209,18 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="973" y="321"/>
+        </scene>
+        <!--ReadyPizzaInterfaceController-->
+        <scene sceneID="2PK-oa-bhG">
+            <objects>
+                <controller identifier="ReadyPizzaInterfaceController" id="VNV-Yd-sfL" customClass="ReadyPizzaInterfaceController" customModule="Pizza_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="En preparacion:" id="svH-3g-4X3"/>
+                        <imageView width="136" height="144" alignment="left" image="pizza" id="UcU-lb-mZX"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1150" y="330.5"/>
         </scene>
     </scenes>
 </document>
