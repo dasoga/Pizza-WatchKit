@@ -71,6 +71,8 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
             }else{
                 let imageName = "empty"
                 cell?.cellCheckImage.setImageNamed(imageName)
+                let actualIndex = pizzaIngredientesSelected.indexOf(actualIngrediente)
+                pizzaIngredientesSelected.removeAtIndex(actualIndex!)
             }
         }else{
             let imageName = "completed"
@@ -79,7 +81,7 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
             doneButton.setEnabled(true)
         }
 
-        
+        print("Actual \(pizzaIngredientesSelected)")
         
     }
 
