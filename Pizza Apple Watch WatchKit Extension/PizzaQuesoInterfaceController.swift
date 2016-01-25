@@ -14,11 +14,14 @@ class PizzaQuesoInterfaceController: WKInterfaceController {
     
     @IBOutlet var quesoTable: WKInterfaceTable!
     
-    let pizzaQuesos = ["Mozarelia", "Cheddar", "Parmesano", "Sin Queso"]
+    let pizzaQuesos = ["Mozarela", "Cheddar", "Parmesano", "Sin Queso"]
 
+    var pizzaObj = Pizza!()
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        pizzaObj = context as! Pizza
+
         setupTable()
     }
 
@@ -44,7 +47,8 @@ class PizzaQuesoInterfaceController: WKInterfaceController {
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        self.pushControllerWithName("PizzaIngredientesInterfaceController", context: pizzaQuesos[rowIndex])
+        pizzaObj.queso = pizzaQuesos[rowIndex]
+        self.pushControllerWithName("PizzaIngredientesInterfaceController", context: pizzaObj)
     }
 
 }

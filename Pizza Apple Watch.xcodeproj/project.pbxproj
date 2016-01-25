@@ -25,6 +25,7 @@
 		2C0341981C54960000AAC189 /* PizzaIngredientesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0341971C54960000AAC189 /* PizzaIngredientesInterfaceController.swift */; };
 		2C03419A1C54971800AAC189 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */; };
 		2C03419C1C55B13400AAC189 /* IngredientesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03419B1C55B13400AAC189 /* IngredientesTable.swift */; };
+		2CB2B9171C55F7A700866EA6 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B9161C55F7A700866EA6 /* Pizza.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		2C0341971C54960000AAC189 /* PizzaIngredientesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaIngredientesInterfaceController.swift; sourceTree = "<group>"; };
 		2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationInterfaceController.swift; sourceTree = "<group>"; };
 		2C03419B1C55B13400AAC189 /* IngredientesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientesTable.swift; sourceTree = "<group>"; };
+		2CB2B9161C55F7A700866EA6 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				2C0341971C54960000AAC189 /* PizzaIngredientesInterfaceController.swift */,
 				2C0341991C54971800AAC189 /* ConfirmationInterfaceController.swift */,
 				2C03419B1C55B13400AAC189 /* IngredientesTable.swift */,
+				2CB2B9161C55F7A700866EA6 /* Pizza.swift */,
 			);
 			path = "Pizza Apple Watch WatchKit Extension";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				2C0341801C5490CD00AAC189 /* ExtensionDelegate.swift in Sources */,
 				2C03419A1C54971800AAC189 /* ConfirmationInterfaceController.swift in Sources */,
+				2CB2B9171C55F7A700866EA6 /* Pizza.swift in Sources */,
 				2C0341921C54917300AAC189 /* ItemsTable.swift in Sources */,
 				2C03419C1C55B13400AAC189 /* IngredientesTable.swift in Sources */,
 				2C0341961C54936000AAC189 /* PizzaQuesoInterfaceController.swift in Sources */,
@@ -460,7 +464,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -474,7 +478,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -485,12 +489,13 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Pizza_Apple_Watch_WatchKit_Extension;
 				INFOPLIST_FILE = "Pizza Apple Watch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dsolorio.Pizza-Apple-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -501,12 +506,13 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Pizza_Apple_Watch_WatchKit_Extension;
 				INFOPLIST_FILE = "Pizza Apple Watch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dsolorio.Pizza-Apple-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -515,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pizza Apple Watch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dsolorio.Pizza-Apple-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pizza Apple Watch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dsolorio.Pizza-Apple-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

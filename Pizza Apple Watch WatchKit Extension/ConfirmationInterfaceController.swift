@@ -12,9 +12,19 @@ import Foundation
 
 class ConfirmationInterfaceController: WKInterfaceController {
 
+    @IBOutlet var sizeLabel: WKInterfaceLabel!
+    @IBOutlet var masaLabel: WKInterfaceLabel!
+    @IBOutlet var quesoLabel: WKInterfaceLabel!
+    @IBOutlet var ingredientesTable: WKInterfaceTable!
+    
+    
+    var pizzaObj = Pizza!()
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        pizzaObj = context as! Pizza
+        print("llego \(pizzaObj.ingredientes)")
+        updateInfo()
         // Configure interface objects here.
     }
 
@@ -28,4 +38,18 @@ class ConfirmationInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    func updateInfo(){
+        self.sizeLabel.setText(pizzaObj.size)
+        self.masaLabel.setText(pizzaObj.masa)
+        self.quesoLabel.setText(pizzaObj.queso)
+        
+        ingredientesTable.setNumberOfRows(pizzaObj.ingredientes.count, withRowType: "ItemsTable")
+        
+        for var i = 0; i < pizzaObj.ingredientes.count; ++i {
+            if let row = ingredientesTable.rowControllerAtIndex(i) as? ItemsTable {
+                row.cellLabel.setText(pizzaObj.ingredientes[i])
+            }
+        }
+        
+    }
 }

@@ -13,14 +13,17 @@ import Foundation
 class PizzaIngredientesInterfaceController: WKInterfaceController {
     
     @IBOutlet var ingredientesTable: WKInterfaceTable!
+    @IBOutlet var doneButton: WKInterfaceButton!
     
     let pizzaIngredientes = ["Jamón", "Salami", "Salchicha", "Pepperoni", "Aceituna", "Piña", "Cebolla", "Pimiento"]
     
-    var pizzaIngredientesSelected: [Int] = []
+    var pizzaIngredientesSelected: [String] = []
 
+    var pizzaObj = Pizza!()
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        pizzaObj = context as! Pizza
+        doneButton.setEnabled(false)
         setupTable()
     }
 
@@ -41,7 +44,7 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
             if let row = ingredientesTable.rowControllerAtIndex(i) as? IngredientesTable {
                 row.cellLabel.setText(pizzaIngredientes[i])
                 //let imageName = entry.completed ? "check-completed" : "check-empty"
-                let imageName: String = "check-empty"
+                let imageName: String = "empty"
                 row.cellCheckImage.setImageNamed(imageName)
             }
         }
@@ -49,30 +52,31 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
         let cell = ingredientesTable.rowControllerAtIndex(rowIndex) as? IngredientesTable
-        
+        let actualIngrediente = pizzaIngredientes[rowIndex]
         if pizzaIngredientesSelected.count > 0{
             if pizzaIngredientesSelected.count < 5{
-                if pizzaIngredientesSelected.contains(rowIndex){
-                    print("Repetido")
-                    let imageName = "check-empty"
+                if pizzaIngredientesSelected.contains(actualIngrediente){
+                    let imageName = "empty"
                     cell?.cellCheckImage.setImageNamed(imageName)
-                    pizzaIngredientesSelected.removeAtIndex(rowIndex)
+                    let actualIndex = pizzaIngredientesSelected.indexOf(actualIngrediente)
+                    pizzaIngredientesSelected.removeAtIndex(actualIndex!)
+                    if pizzaIngredientesSelected.count == 0{
+                        doneButton.setEnabled(false)
+                    }
                 }else{
-                    print("Nuevo")
-                    let imageName = "check-completed"
+                    let imageName = "completed"
                     cell?.cellCheckImage.setImageNamed(imageName)
-                    pizzaIngredientesSelected.append(rowIndex)
+                    pizzaIngredientesSelected.append(actualIngrediente)
                 }
             }else{
-                let imageName = "check-empty"
+                let imageName = "empty"
                 cell?.cellCheckImage.setImageNamed(imageName)
-                pizzaIngredientesSelected.removeAtIndex(rowIndex)
             }
         }else{
-            let imageName = "check-completed"
+            let imageName = "completed"
             cell?.cellCheckImage.setImageNamed(imageName)
-            pizzaIngredientesSelected.append(rowIndex)
-            
+            pizzaIngredientesSelected.append(actualIngrediente)
+            doneButton.setEnabled(true)
         }
 
         
@@ -80,7 +84,9 @@ class PizzaIngredientesInterfaceController: WKInterfaceController {
     }
 
     @IBAction func goToConfirmation(){
-        self.pushControllerWithName("ConfirmationInterfaceController", context: pizzaIngredientes)
+        
+        pizzaObj.ingredientes = pizzaIngredientesSelected
+        self.pushControllerWithName("ConfirmationInterfaceController", context: pizzaObj)
     }
 
 }
